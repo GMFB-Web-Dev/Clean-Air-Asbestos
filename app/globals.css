@@ -124,6 +124,7 @@ img { max-width: 100%; }
 .contact-form .consent input { accent-color: var(--red); }
 .contact-form button { margin-top: 12px; cursor: pointer; }
 .contact-form button:disabled { opacity: .6; cursor: wait; }
+.contact-form-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .form-message { font-size: 14px !important; }
 .form-message.error { color: #a3130f; }
 .form-message.success { color: #1d6b37; }

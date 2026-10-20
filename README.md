@@ -36,3 +36,13 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 # Clean-Air-Asbestos
+
+## Contact email delivery
+
+The shared contact form sends an internal enquiry and a visitor acknowledgement through Resend.
+
+- `RESEND_API_KEY` is required.
+- `CONTACT_EMAIL_TO` optionally overrides the default recipient, `info@clearair.co.nz`.
+- `RESEND_FROM_EMAIL` optionally overrides the verified default sender, `Clear Air Website <website@weblaunch.co.nz>`.
+
+Run `npm run email` to preview the two branded templates locally on port 3002.
