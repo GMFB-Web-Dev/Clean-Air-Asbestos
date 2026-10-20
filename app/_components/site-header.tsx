@@ -27,8 +27,8 @@ export function SiteHeader() {
         <nav className="desktop-nav" aria-label="Primary navigation">
           <Link className={pathname === "/about-us" ? "active" : ""} href="/about-us">ABOUT</Link>
           <div className="services-menu">
-            <Link className={pathname === "/services" || serviceCards.some(([slug]) => pathname === `/${slug}`) ? "active" : ""} href="/services">
-              SERVICES <span aria-hidden>⌄</span>
+            <Link className={`services-link ${pathname === "/services" || serviceCards.some(([slug]) => pathname === `/${slug}`) ? "active" : ""}`} href="/services">
+              <span>SERVICES</span><span className="services-arrow" aria-hidden="true" />
             </Link>
             <div className="dropdown">
               {serviceCards.map(([slug, title]) => <Link href={`/${slug}`} key={slug}>{title}</Link>)}
