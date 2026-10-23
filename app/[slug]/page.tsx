@@ -33,7 +33,7 @@ export default async function ServicePage({ params }: PageProps<"/[slug]">) {
   if (!service) notFound();
 
   const heroTitle = slug === "contaminated-soil"
-    ? <><span className="hero-title-line">ASBESTOS</span><span className="hero-title-line">CONTAMINATED SOIL</span><span className="hero-title-line">SUPPORT SERVICES</span></>
+    ? <><span className="hero-title-line">ASBESTOS</span><span className="hero-title-line">CONTAMINATED SOIL</span><span className="hero-title-line">SUPPORT SERVICES<em>.</em></span></>
     : service.heroTitle;
 
   const isMould = slug === "mould-remediation";
@@ -49,7 +49,7 @@ export default async function ServicePage({ params }: PageProps<"/[slug]">) {
     : <section className="section service-detail"><Reveal className="section-shell"><Eyebrow>{service.detailEyebrow}</Eyebrow><h2>{service.detailTitle}</h2>{service.detail.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{slug !== "contaminated-soil" && <ButtonLink href="/contact-us">CONTACT US</ButtonLink>}</Reveal></section>;
 
   return <main id="content" className={`service-page service-page-${slug}`}>
-    <Hero eyebrow={service.heroEyebrow} title={heroTitle} text={service.heroText} image={service.heroImage} />
+    <Hero eyebrow={service.heroEyebrow} title={heroTitle} text={service.heroText} image={service.heroImage} punctuation={slug !== "contaminated-soil"} />
     <section className="section service-intro"><Reveal className="section-shell"><Eyebrow>{service.introEyebrow}</Eyebrow><h2>{service.introTitle}</h2>{service.intro.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<ButtonLink href="/contact-us">CONTACT US</ButtonLink></Reveal></section>
     {accreditationSection}
     {(slug === "contaminated-soil" || isMould || usesSplitDetail) && detailSection}

@@ -8,15 +8,16 @@ type HeroProps = {
   home?: boolean;
   primaryHref?: string;
   primaryLabel?: string;
+  punctuation?: boolean;
 };
 
-export function Hero({ eyebrow, title, text, image, home = false, primaryHref = "/services", primaryLabel = "SERVICES" }: HeroProps) {
+export function Hero({ eyebrow, title, text, image, home = false, primaryHref = "/services", primaryLabel = "SERVICES", punctuation = true }: HeroProps) {
   return (
     <section className={`hero ${home ? "hero-home" : "hero-inner"}`} style={{ "--hero-image": `url(${image})` } as React.CSSProperties}>
       <div className="hero-shade" />
       <div className="hero-content">
         <Eyebrow>{eyebrow}</Eyebrow>
-        <h1>{title}<em>.</em></h1>
+        <h1>{title}{punctuation && <em>.</em>}</h1>
         <p>{text}</p>
         <div className="hero-actions">
           <ButtonLink href={primaryHref}>{primaryLabel}</ButtonLink>
