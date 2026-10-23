@@ -88,7 +88,10 @@ export const services: Record<string, Service> = {
     introEyebrow: "PRACTICAL HELP FOR SITE WORKS", introTitle: "LIGHT DEMOLITION SUPPORT",
     intro: ["Clear Air supports light demolition work where it connects to asbestos, hazardous materials, contaminated areas, or site preparation, providing practical guidance from planning to completion."],
     detailEyebrow: "SUPPORT FOR SITE WORKS", detailTitle: "PRACTICAL DEMOLITION SUPPORT FOR SITE WORKS",
-    detail: ["Some projects need more than asbestos removal alone. Clear Air can support light demolition work where it connects to asbestos, hazardous materials, contaminated areas, or site preparation. For larger demolition work, Clear Air can help manage the process by coordinating with trusted demolition contractors, giving clients one clear point of support from the early planning stage through to completion."],
+    detail: [
+      "Some projects need more than asbestos removal alone. Clear Air can support light demolition work where it connects to asbestos, hazardous materials, contaminated areas, or site preparation.",
+      "For larger demolition work, Clear Air can help manage the process by coordinating with trusted demolition contractors, giving clients one clear point of support from the early planning stage through to completion.",
+    ],
     coversTitle: "CLEAR GUIDANCE FOR LIGHT DEMOLITION WORK",
     covers: ["Light demolition support", "Site preparation works", "Demolition connected to asbestos removal", "Hazardous material related demolition", "Removal and cleanup support", "Coordination with demolition contractors", "Support for residential and commercial projects", "Guidance from planning through to completion"],
   },

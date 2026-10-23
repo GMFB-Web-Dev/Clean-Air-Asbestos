@@ -158,11 +158,12 @@ img { max-width: 100%; }
 .mould-detail-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: center; margin-top: 44px; }
 .mould-detail-grid h2 { margin: 0; }
 .mould-detail-copy p:last-child { margin-bottom: 0; }
-.meth-detail { padding-top: 48px; }
-.meth-detail-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: center; margin-top: 44px; }
-.meth-detail-grid h2 { margin: 0; }
-.meth-detail-copy p:last-child { margin-bottom: 0; }
-.service-page-methamphetamine-decontamination .covers-section .button-link { margin-top: 34px; }
+.split-service-detail { padding-top: 48px; }
+.split-service-detail-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; align-items: center; margin-top: 44px; }
+.split-service-detail-grid h2 { margin: 0; }
+.split-service-detail-copy p:last-child { margin-bottom: 0; }
+.service-page-methamphetamine-decontamination .covers-section .button-link,
+.service-page-light-demolition .covers-section .button-link { margin-top: 34px; }
 .class-section { padding-top: 48px; }
 .class-section h2 { margin-bottom: 48px; text-align: center; font-size: 56px; }
 .class-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
@@ -222,7 +223,7 @@ img { max-width: 100%; }
   .value { padding: 0 14px; }
   .value h3 { font-size: 17px; }
   .contact-layout, .process-layout, .areas-layout { gap: 42px; }
-  .mould-accreditation-grid, .mould-detail-grid, .meth-detail-grid { gap: 42px; }
+  .mould-accreditation-grid, .mould-detail-grid, .split-service-detail-grid { gap: 42px; }
   .area-list { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(4, auto); justify-content: stretch; gap: 12px 24px; }
   .area-list span { font-size: 16px; }
   .area-list img { width: 38px; height: 38px; padding: 6px; }
@@ -271,9 +272,9 @@ img { max-width: 100%; }
   .service-card h3 { font-size: 20px; }
   .split-heading { gap: 0; }
   .split-heading > p { padding-top: 0; }
-  .mould-accreditation-grid, .mould-detail-grid, .meth-detail-grid { grid-template-columns: 1fr; gap: 24px; }
+  .mould-accreditation-grid, .mould-detail-grid, .split-service-detail-grid { grid-template-columns: 1fr; gap: 24px; }
   .mould-accreditation h2 { font-size: 32px; }
-  .mould-detail-grid, .meth-detail-grid { margin-top: 28px; }
+  .mould-detail-grid, .split-service-detail-grid { margin-top: 28px; }
   .mould-detail-grid h2 { order: -1; }
   .values-grid { margin-top: 24px; }
   .value { border-right: 0; border-bottom: 1px solid rgb(221 39 33 / 45%); padding: 26px 0; }
