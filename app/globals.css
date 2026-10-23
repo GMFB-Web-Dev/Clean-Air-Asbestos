@@ -112,6 +112,7 @@ img { max-width: 100%; }
 .cert-grid img { width: 100%; height: auto; max-height: 120px; object-fit: contain; }
 
 .process-section { background: var(--soft); padding-top: 70px; padding-bottom: 72px; }
+.service-page-oversight-management .process-section { background: #fff; }
 .process-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 .process-layout > div:first-child .eyebrow { justify-content: flex-start; }
 .process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px 32px; }
