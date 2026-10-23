@@ -3,7 +3,7 @@ import Link from "next/link";
 import { areas, processSteps, serviceCards, values } from "../_data/site";
 import { ContactForm } from "./contact-form";
 import { Reveal } from "./reveal";
-import { ButtonLink, Eyebrow } from "./ui";
+import { ActionArrow, ButtonLink, Eyebrow } from "./ui";
 
 export function ServicesGrid({ limit }: { limit?: number }) {
   return (
@@ -11,7 +11,7 @@ export function ServicesGrid({ limit }: { limit?: number }) {
       {serviceCards.slice(0, limit).map(([slug, title, text]) => (
         <Reveal className="service-card" key={slug}>
           <h3>{title}</h3><p>{text}</p>
-          <Link href={`/${slug}`}>LEARN MORE <span aria-hidden>→</span></Link>
+          <Link href={`/${slug}`}><span className="action-label">LEARN MORE</span><ActionArrow /></Link>
         </Reveal>
       ))}
     </div>

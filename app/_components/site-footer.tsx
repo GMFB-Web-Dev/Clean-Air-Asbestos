@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const logos = [
   ["/assets/live/6fa32d81a385ddb246cfabbc5abf20ac6476bae5-scaled.png", "Tōtika"],
@@ -10,6 +13,8 @@ const logos = [
 ] as const;
 
 export function SiteFooter() {
+  const pathname = usePathname();
+
   return (
     <footer className="site-footer">
       <div className="footer-top">
@@ -17,7 +22,10 @@ export function SiteFooter() {
           <Image src="/assets/live/77d6fce3da5a12e3e90dd822f2062a717969d3e2.png" alt="Clear Air Asbestos Management Ltd" width={391} height={204} />
         </Link>
         <nav aria-label="Footer navigation">
-          <Link href="/">HOME</Link><Link href="/about-us">ABOUT</Link><Link href="/services">SERVICES</Link><Link href="/contact-us">CONTACT</Link>
+          <Link className={pathname === "/" ? "active" : ""} href="/">HOME</Link>
+          <Link className={pathname === "/about-us" ? "active" : ""} href="/about-us">ABOUT</Link>
+          <Link className={pathname === "/services" ? "active" : ""} href="/services">SERVICES</Link>
+          <Link className={pathname === "/contact-us" ? "active" : ""} href="/contact-us">CONTACT</Link>
         </nav>
       </div>
       <div className="footer-logos">
@@ -25,7 +33,7 @@ export function SiteFooter() {
       </div>
       <div className="footer-bottom">
         <a href="https://www.gmfb.co.nz/" target="_blank" rel="noreferrer">2026 Developed by GMFB Ltd. All right reserved.</a>
-        <span>Privacy Policy</span>
+        <Link href="/privacy-policy">Privacy Policy</Link>
         <span>Terms of Service</span>
       </div>
     </footer>
