@@ -39,7 +39,8 @@ export default async function ServicePage({ params }: PageProps<"/[slug]">) {
   const isMould = slug === "mould-remediation";
   const isMeth = slug === "methamphetamine-decontamination";
   const isLightDemolition = slug === "light-demolition";
-  const usesSplitDetail = isMeth || isLightDemolition;
+  const isOversight = slug === "oversight-management";
+  const usesSplitDetail = isMeth || isLightDemolition || isOversight;
   const accreditationSection = isMould ? <section className="section mould-accreditation"><Reveal className="section-shell mould-accreditation-grid"><h2>IMPORTANT<br />ACCREDITATION<br />NOTE</h2><p>Clear Air mainly works across the Wellington region, while also supporting nearby areas for asbestos removal, contaminated soil, and wider hazardous material services.</p></Reveal></section> : null;
   const detailSection = isMould
     ? <section className="section service-detail mould-detail"><Reveal className="section-shell"><Eyebrow>{service.detailEyebrow}</Eyebrow><div className="mould-detail-grid"><div className="mould-detail-copy">{service.detail.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div><h2>{service.detailTitle}</h2></div></Reveal></section>

@@ -163,7 +163,8 @@ img { max-width: 100%; }
 .split-service-detail-grid h2 { margin: 0; }
 .split-service-detail-copy p:last-child { margin-bottom: 0; }
 .service-page-methamphetamine-decontamination .covers-section .button-link,
-.service-page-light-demolition .covers-section .button-link { margin-top: 34px; }
+.service-page-light-demolition .covers-section .button-link,
+.service-page-oversight-management .covers-section .button-link { margin-top: 34px; }
 .class-section { padding-top: 48px; }
 .class-section h2 { margin-bottom: 48px; text-align: center; font-size: 56px; }
 .class-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }

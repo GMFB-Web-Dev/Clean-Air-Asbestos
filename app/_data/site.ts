@@ -102,7 +102,10 @@ export const services: Record<string, Service> = {
     introEyebrow: "CLEAR COORDINATION FOR SITE WORKS", introTitle: "OVERSIGHT MANAGEMENT SERVICES",
     intro: ["Clear Air provides oversight management for clients who need support coordinating multiple parts of a project. From asbestos removal through to demolition, scaffolding, building work, roofing, and completion, the team helps guide the process and keep the work moving in the right order."],
     detailEyebrow: "ONE POINT OF CONTACT FROM START TO FINISH", detailTitle: "PROJECT SUPPORT FOR COMPLEX SITE WORKS",
-    detail: ["Some projects involve more than one service, contractor, or stage of work. Clear Air can support clients by helping manage the wider process, especially when asbestos removal, hazardous materials, demolition, or site preparation are involved. This gives clients a clear point of contact and practical guidance across the different steps required to complete the job safely and responsibly."],
+    detail: [
+      "Some projects involve more than one service, contractor, or stage of work. Clear Air can support clients by helping manage the wider process, especially when asbestos removal, hazardous materials, demolition, or site preparation are involved.",
+      "This gives clients a clear point of contact and practical guidance across the different steps required to complete the job safely and responsibly.",
+    ],
     coversTitle: "MANAGED SUPPORT ACROSS EVERY STAGE",
     covers: ["Oversight management support", "Asbestos removal coordination", "Demolition support", "Scaffolding coordination", "Builder and roofer coordination", "Hazardous material related project support", "Site preparation guidance", "Support from planning through to completion"],
   },
