@@ -160,9 +160,11 @@ img { max-width: 100%; }
 .cover-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; text-align: left; }
 .cover-list li { display: flex; align-items: center; gap: 14px; color: #4b5563; font-size: 18px; font-weight: 300; line-height: 1.5; }
 .cover-list i { display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; color: #fff; background: var(--red); font-size: 18px; font-style: normal; }
+.cover-list .cover-cube { display: grid; flex: 0 0 auto; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--red); }
+.cover-list .cover-cube img { width: 30px; height: 30px; object-fit: contain; }
 .covers-section { background: #fffafa; }
 .covers-section h2 { text-align: center; }
-.covers-section .cover-list { max-width: 880px; margin: 34px auto 0; grid-template-columns: 1fr 1fr; gap: 18px 50px; }
+.covers-section .cover-list { max-width: 880px; margin: 34px auto 0; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, auto); grid-auto-flow: column; gap: 18px 50px; }
 .service-page-contaminated-soil .service-detail { background: #fffafa; }
 .service-page-contaminated-soil .covers-section { background: #fff; }
 .areas-section { padding-top: 72px; }
@@ -272,7 +274,9 @@ img { max-width: 100%; }
   .class-card h4 { font-size: 18px; }
   .class-card .cover-list li { font-size: 16px; }
   .class-card .cover-list i { width: 28px; height: 28px; font-size: 16px; }
-  .covers-section .cover-list { grid-template-columns: 1fr; }
+  .covers-section .cover-list { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-flow: row; }
+  .covers-section .cover-cube { width: 40px; height: 40px; }
+  .covers-section .cover-cube img { width: 26px; height: 26px; }
   .area-list { order: 2; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(4, auto); gap: 14px 18px; }
   .area-list span { font-size: 15px; }
   .area-list img { width: 34px; height: 34px; padding: 5px; }
