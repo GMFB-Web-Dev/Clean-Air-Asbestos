@@ -74,7 +74,10 @@ export const services: Record<string, Service> = {
     introEyebrow: "PROPERTY SUPPORT FOR CONTAMINATED SPACES", introTitle: "METHAMPHETAMINE DECONTAMINATION",
     intro: ["Clear Air provides methamphetamine decontamination support for clients dealing with affected properties across Wellington and the wider region. The team helps property owners, landlords, property managers, and project teams understand what may be required and how to move forward safely."],
     detailEyebrow: "METH DECONTAMINATION SUPPORT", detailTitle: "SUPPORT FOR AFFECTED PROPERTIES",
-    detail: ["Methamphetamine contamination can create stress and uncertainty for anyone responsible for a property. Clear Air provides practical support to help manage the issue, plan the work required, and guide clients through the next steps clearly. Whether the property is residential, rental, commercial, or part of a wider site project, the team can help review the situation and provide decontamination support based on what is required."],
+    detail: [
+      "Methamphetamine contamination can create stress and uncertainty for anyone responsible for a property. Clear Air provides practical support to help manage the issue, plan the work required, and guide clients through the next steps clearly.",
+      "Whether the property is residential, rental, commercial, or part of a wider site project, the team can help review the situation and provide decontamination support based on what is required.",
+    ],
     coversTitle: "CLEAR GUIDANCE FOR DECONTAMINATION WORK",
     covers: ["Methamphetamine decontamination support", "Residential and rental properties", "Commercial and managed properties", "Property owner and landlord support", "Site review and practical guidance", "Clear advice on the next steps", "Planning around affected areas", "Decontamination work where required"],
   },

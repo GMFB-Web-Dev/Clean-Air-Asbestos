@@ -37,18 +37,21 @@ export default async function ServicePage({ params }: PageProps<"/[slug]">) {
     : service.heroTitle;
 
   const isMould = slug === "mould-remediation";
+  const isMeth = slug === "methamphetamine-decontamination";
   const accreditationSection = isMould ? <section className="section mould-accreditation"><Reveal className="section-shell mould-accreditation-grid"><h2>IMPORTANT<br />ACCREDITATION<br />NOTE</h2><p>Clear Air mainly works across the Wellington region, while also supporting nearby areas for asbestos removal, contaminated soil, and wider hazardous material services.</p></Reveal></section> : null;
   const detailSection = isMould
     ? <section className="section service-detail mould-detail"><Reveal className="section-shell"><Eyebrow>{service.detailEyebrow}</Eyebrow><div className="mould-detail-grid"><div className="mould-detail-copy">{service.detail.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div><h2>{service.detailTitle}</h2></div></Reveal></section>
+    : isMeth
+      ? <section className="section service-detail meth-detail"><Reveal className="section-shell"><Eyebrow>{service.detailEyebrow}</Eyebrow><div className="meth-detail-grid"><h2>{service.detailTitle}</h2><div className="meth-detail-copy">{service.detail.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></div></Reveal></section>
     : <section className="section service-detail"><Reveal className="section-shell"><Eyebrow>{service.detailEyebrow}</Eyebrow><h2>{service.detailTitle}</h2>{service.detail.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{slug !== "contaminated-soil" && <ButtonLink href="/contact-us">CONTACT US</ButtonLink>}</Reveal></section>;
 
   return <main id="content" className={`service-page service-page-${slug}`}>
     <Hero eyebrow={service.heroEyebrow} title={heroTitle} text={service.heroText} image={service.heroImage} />
     <section className="section service-intro"><Reveal className="section-shell"><Eyebrow>{service.introEyebrow}</Eyebrow><h2>{service.introTitle}</h2>{service.intro.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<ButtonLink href="/contact-us">CONTACT US</ButtonLink></Reveal></section>
     {accreditationSection}
-    {(slug === "contaminated-soil" || isMould) && detailSection}
-    {slug === "class-a-b-removal" ? <section className="section class-section"><div className="section-shell"><Reveal><Eyebrow>LICENSED ASBESTOS REMOVAL</Eyebrow><h2>CLASS A & CLASS B SUPPORT</h2></Reveal><div className="class-grid"><Reveal className="class-card"><h3>CLASS A & B ASBESTOS REMOVAL</h3><p>Class A asbestos removal is for higher-risk friable asbestos materials that can release fibres more easily. This work needs careful planning, strict controls, and the right licensed team to manage the removal safely.</p><h4>COVERS</h4><CoverList items={classA} /></Reveal><Reveal className="class-card"><h3>CLASS B ASBESTOS REMOVAL</h3><p>Class B asbestos removal is for non-friable asbestos materials that are often found in building products and site materials. These materials still need to be handled carefully and removed by a trained, licensed team.</p><h4>COVERS</h4><CoverList items={classB} /></Reveal></div></div></section> : <section className="section covers-section"><Reveal className="section-shell"><Eyebrow>{service.coversTitle}</Eyebrow><h2>WHAT THIS SERVICE COVERS</h2><CoverList items={service.covers} cubeIcons /></Reveal></section>}
-    {slug !== "contaminated-soil" && !isMould && detailSection}
+    {(slug === "contaminated-soil" || isMould || isMeth) && detailSection}
+    {slug === "class-a-b-removal" ? <section className="section class-section"><div className="section-shell"><Reveal><Eyebrow>LICENSED ASBESTOS REMOVAL</Eyebrow><h2>CLASS A & CLASS B SUPPORT</h2></Reveal><div className="class-grid"><Reveal className="class-card"><h3>CLASS A & B ASBESTOS REMOVAL</h3><p>Class A asbestos removal is for higher-risk friable asbestos materials that can release fibres more easily. This work needs careful planning, strict controls, and the right licensed team to manage the removal safely.</p><h4>COVERS</h4><CoverList items={classA} /></Reveal><Reveal className="class-card"><h3>CLASS B ASBESTOS REMOVAL</h3><p>Class B asbestos removal is for non-friable asbestos materials that are often found in building products and site materials. These materials still need to be handled carefully and removed by a trained, licensed team.</p><h4>COVERS</h4><CoverList items={classB} /></Reveal></div></div></section> : <section className="section covers-section"><Reveal className="section-shell"><Eyebrow>{service.coversTitle}</Eyebrow><h2>WHAT THIS SERVICE COVERS</h2><CoverList items={service.covers} cubeIcons />{isMeth && <ButtonLink href="/contact-us">CONTACT US</ButtonLink>}</Reveal></section>}
+    {slug !== "contaminated-soil" && !isMould && !isMeth && detailSection}
     <ProcessSection /><AreasSection />
   </main>;
 }
