@@ -2,7 +2,7 @@ import { ButtonLink, Eyebrow } from "./ui";
 
 type HeroProps = {
   eyebrow: string;
-  title: string;
+  title: React.ReactNode;
   text: string;
   image: string;
   home?: boolean;

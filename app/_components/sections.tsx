@@ -62,6 +62,6 @@ export function ContactSection() {
 
 export function AreasSection() {
   return (
-    <section className="section areas-section"><Reveal className="section-shell areas-layout"><div className="area-list">{areas.map((area) => <span key={area}><Image src="/assets/live/Pin.svg" alt="" width={28} height={28} />{area}</span>)}</div><div><Eyebrow>LOCAL SUPPORT FOR SAFER SITES</Eyebrow><h2>AREAS WE SERVICE</h2><p>Clear Air mainly works across the Wellington region, while also supporting nearby areas for asbestos removal, contaminated soil, and wider hazardous material services.</p></div></Reveal></section>
+    <section className="section areas-section"><Reveal className="section-shell areas-layout"><div className="area-list">{areas.map((area) => <span key={area}><Image src="/assets/live/Cube.svg" alt="" width={42} height={42} />{area}</span>)}</div><div><Eyebrow>LOCAL SUPPORT FOR SAFER SITES</Eyebrow><h2>AREAS WE SERVICE</h2><p>Clear Air mainly works across the Wellington region, while also supporting nearby areas for asbestos removal, contaminated soil, and wider hazardous material services.</p></div></Reveal></section>
   );
 }

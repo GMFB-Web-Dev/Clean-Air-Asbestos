@@ -31,11 +31,18 @@ export default async function ServicePage({ params }: PageProps<"/[slug]">) {
   const service = services[slug];
   if (!service) notFound();
 
-  return <main id="content">
-    <Hero eyebrow={service.heroEyebrow} title={service.heroTitle} text={service.heroText} image={service.heroImage} />
+  const heroTitle = slug === "contaminated-soil"
+    ? <><span className="hero-title-line">ASBESTOS</span><span className="hero-title-line">CONTAMINATED SOIL</span><span className="hero-title-line">SUPPORT SERVICES</span></>
+    : service.heroTitle;
+
+  const detailSection = <section className="section service-detail"><Reveal className="section-shell"><Eyebrow>{service.detailEyebrow}</Eyebrow><h2>{service.detailTitle}</h2>{service.detail.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{slug !== "contaminated-soil" && <ButtonLink href="/contact-us">CONTACT US</ButtonLink>}</Reveal></section>;
+
+  return <main id="content" className={`service-page service-page-${slug}`}>
+    <Hero eyebrow={service.heroEyebrow} title={heroTitle} text={service.heroText} image={service.heroImage} />
     <section className="section service-intro"><Reveal className="section-shell"><Eyebrow>{service.introEyebrow}</Eyebrow><h2>{service.introTitle}</h2>{service.intro.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<ButtonLink href="/contact-us">CONTACT US</ButtonLink></Reveal></section>
-    {slug === "class-a-b-removal" ? <section className="section class-section"><div className="section-shell"><Reveal><Eyebrow>LICENSED ASBESTOS REMOVAL</Eyebrow><h2>CLASS A & CLASS B SUPPORT</h2></Reveal><div className="class-grid"><Reveal className="class-card"><h3>CLASS A ASBESTOS REMOVAL</h3><p>Class A asbestos removal is for higher-risk friable asbestos materials that can release fibres more easily. This work needs careful planning, strict controls, and the right licensed team to manage the removal safely.</p><h4>COVERS</h4><CoverList items={classA} /></Reveal><Reveal className="class-card"><h3>CLASS B ASBESTOS REMOVAL</h3><p>Class B asbestos removal is for non-friable asbestos materials that are often found in building products and site materials. These materials still need to be handled carefully and removed by a trained, licensed team.</p><h4>COVERS</h4><CoverList items={classB} /></Reveal></div></div></section> : <section className="section covers-section"><Reveal className="section-shell"><Eyebrow>{service.coversTitle}</Eyebrow><h2>WHAT THIS SERVICE COVERS</h2><CoverList items={service.covers} /></Reveal></section>}
-    <section className="section service-detail"><Reveal className="section-shell"><Eyebrow>{service.detailEyebrow}</Eyebrow><h2>{service.detailTitle}</h2>{service.detail.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<ButtonLink href="/contact-us">CONTACT US</ButtonLink></Reveal></section>
+    {slug === "contaminated-soil" && detailSection}
+    {slug === "class-a-b-removal" ? <section className="section class-section"><div className="section-shell"><Reveal><Eyebrow>LICENSED ASBESTOS REMOVAL</Eyebrow><h2>CLASS A & CLASS B SUPPORT</h2></Reveal><div className="class-grid"><Reveal className="class-card"><h3>CLASS A & B ASBESTOS REMOVAL</h3><p>Class A asbestos removal is for higher-risk friable asbestos materials that can release fibres more easily. This work needs careful planning, strict controls, and the right licensed team to manage the removal safely.</p><h4>COVERS</h4><CoverList items={classA} /></Reveal><Reveal className="class-card"><h3>CLASS B ASBESTOS REMOVAL</h3><p>Class B asbestos removal is for non-friable asbestos materials that are often found in building products and site materials. These materials still need to be handled carefully and removed by a trained, licensed team.</p><h4>COVERS</h4><CoverList items={classB} /></Reveal></div></div></section> : <section className="section covers-section"><Reveal className="section-shell"><Eyebrow>{service.coversTitle}</Eyebrow><h2>WHAT THIS SERVICE COVERS</h2><CoverList items={service.covers} /></Reveal></section>}
+    {slug !== "contaminated-soil" && detailSection}
     <ProcessSection /><AreasSection />
   </main>;
 }
