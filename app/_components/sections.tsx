@@ -5,10 +5,14 @@ import { ContactForm } from "./contact-form";
 import { Reveal } from "./reveal";
 import { ActionArrow, ButtonLink, Eyebrow } from "./ui";
 
-export function ServicesGrid({ limit }: { limit?: number }) {
+export function ServicesGrid({ limit, homeSummary = false }: { limit?: number; homeSummary?: boolean }) {
+  const cards = homeSummary
+    ? [...serviceCards.slice(0, 3), ["services", "OTHER SERVICES", "Clear Air also supports clients with Methamphetamine Decontamination, Light Demolition, Site Management, and Wider Hazardous Material support where required."] as const]
+    : limit === undefined ? serviceCards : serviceCards.slice(0, limit);
+
   return (
     <div className="service-grid">
-      {serviceCards.slice(0, limit).map(([slug, title, text]) => (
+      {cards.map(([slug, title, text]) => (
         <Reveal className="service-card" key={slug}>
           <h3>{title}</h3><p>{text}</p>
           <Link href={`/${slug}`}><span className="action-label">LEARN MORE</span><ActionArrow /></Link>
